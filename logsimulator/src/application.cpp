@@ -49,7 +49,7 @@ void Application::addLogLine(const QString& s)
 {
   const auto& clientId = widget->getClientId();
   const auto& line = QString("2018/01/01 00:00:00 0000000000 xxx [INFO Client %1] %2\n").arg(clientId, s);
-  QFile file(QDir(widget->getClientPath()).absoluteFilePath("logs/Client.txt"));
+  QFile file(QDir(widget->getClientPath()).absoluteFilePath("logs/kakaoClient.txt"));
   if (!file.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::Text))
     return;
   file.write(line.toUtf8());
